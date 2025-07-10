@@ -31,13 +31,11 @@ public class LoginServlet extends HttpServlet {
 
             // Use UserDao to authenticate
             UserDao dao = new UserDao(conn);
-            boolean status = dao.authenticateUser(email, password);
+            String name = dao.authenticateUser(email, password);
 
-            if (status) {
-                // Start a session and store user info
+            if (name != null) {
                 HttpSession session = request.getSession();
-                session.setAttribute("user", email);
-
+                session.setAttribute("user", name); // store name instead of email
                 response.sendRedirect("home.jsp");
             } else {
                 response.sendRedirect("index.jsp?error=1"); // invalid login

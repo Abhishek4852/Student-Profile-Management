@@ -31,19 +31,24 @@ public class UserDao {
 	    }
 
 	    // Login - check credentials
-	    public boolean authenticateUser(String email, String password) {
+	 // Login - check credentials and return user's name if valid
+	    public String authenticateUser(String email, String password) {
 	        try {
-	            String query = "SELECT * FROM users WHERE email = ? AND password = ?";
+	            String query = "SELECT name FROM users WHERE email = ? AND password = ?";
 	            PreparedStatement ps = conn.prepareStatement(query);
 	            ps.setString(1, email);
 	            ps.setString(2, password);
 
 	            ResultSet rs = ps.executeQuery();
-	            return rs.next();
-
+	            if (rs.next()) {
+	                return rs.getString("name"); // return the user's name
+	            } else {
+	                return null; // login failed
+	            }
 	        } catch (Exception e) {
 	            e.printStackTrace();
-	            return false;
+	            return null;
 	        }
 	    }
+
 }
