@@ -36,28 +36,29 @@ This project is ideal for students and beginners looking to learn full-stack Jav
 - Render (cloud deployment)
 
 ---
-
 ## 📁 Project Structure
 
+```
 Student-Profile-Management/
-├── Dockerfile # Docker configuration for Render deployment
-├── student.war # Final WAR file for deployment
+├── Dockerfile                 # Docker configuration for Render deployment
+├── student.war                # Final WAR file for deployment
 ├── src/
-│ ├── dao/ # Data Access Layer
-│ │ └── StudentDao.java
-│ ├── model/ # Student entity
-│ │ └── Student.java
-│ └── servlets/ # Servlet classes (login, register, CRUD)
+│   ├── dao/                   # Data Access Layer
+│   │   └── StudentDao.java
+│   ├── model/                 # Student entity
+│   │   └── Student.java
+│   └── servlets/              # Servlet classes (login, register, CRUD)
 ├── WebContent/
-│ ├── index.jsp # Login page
-│ ├── home.jsp # Dashboard
-│ ├── addStudent.jsp # Add student form
-│ ├── viewStudents.jsp # View students table
-│ ├── register.jsp # Register page
-│ ├── navbar.jsp # Common navbar
-│ ├── footer.jsp # Common footer
-│ └── WEB-INF/
-│ └── web.xml # Deployment descriptor
+│   ├── index.jsp              # Login page
+│   ├── home.jsp               # Dashboard
+│   ├── addStudent.jsp         # Add student form
+│   ├── viewStudents.jsp       # View students table
+│   ├── register.jsp           # Register page
+│   ├── navbar.jsp             # Common navbar
+│   ├── footer.jsp             # Common footer
+│   └── WEB-INF/
+│       └── web.xml            # Deployment descriptor
+```
 
 
 ---
